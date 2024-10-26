@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полёт шмеля</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="body">
+    <audio class="music" controls src="/bumblebee-fly-short-buzz-hum-06.mp3"></audio>
+    <button id="button-up" class="button-one">Лети вверх!</button>
+    <button id="button-down" class="button-two">Лети вниз!</button>
+    <button id="button-right" class="button-three">Лети вправо!</button>
+    <button id="button-left" class="button-four">Лети влево!</button>
+    <button id="button-base" class="button-beebase">ПриХМЕЛиться!🌿</button>
+    <img id="bumblebee-is-flying" class="bumblebee"src="/shmel.gif">
+
+    <script>
+        const buttonUp = document.getElementById('button-up');
+        const buttonRight = document.getElementById('button-right');
+        const buttonDown = document.getElementById('button-down');
+        const buttonLeft = document.getElementById('button-left');
+        const buttonBase = document.getElementById('button-base');
+        const bumblebeeIsFlying = document.getElementById('bumblebee-is-flying');
+
+        buttonUp.onclick = function() {
+            bumblebeeIsFlying.classList.add('up');
+            bumblebeeIsFlying.classList.remove('down');
+        }
+        buttonRight.onclick = function() {
+            bumblebeeIsFlying.classList.add('right');
+            bumblebeeIsFlying.classList.remove('left');
+        }
+        buttonDown.onclick = function() {
+            bumblebeeIsFlying.classList.add('down');
+            bumblebeeIsFlying.classList.remove('up');
+        }
+        buttonLeft.onclick = function() {
+            bumblebeeIsFlying.classList.add('left');
+            bumblebeeIsFlying.classList.remove('right');
+        }
+        buttonBase.onclick = function() {
+            bumblebeeIsFlying.classList.remove('up', 'down', 'right', 'left');
+            bumblebeeIsFlying.classList.add('bumblebee');
+        }
+    </script>
+</body>
+</html>
